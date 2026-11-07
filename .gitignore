@@ -1,0 +1,10 @@
+# Kiro Crew internal files
+HEARTBEAT.md
+knowledge/
+memory/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/

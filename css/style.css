@@ -1,0 +1,146 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #f5f5f5;
+  --text: #222;
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --accent: #4a90d9;
+  --accent-text: #fff;
+  --done-text: #888;
+  --input-border: #ccc;
+}
+
+body.dark-mode {
+  --bg: #1a1a2e;
+  --text: #e0e0e0;
+  --card-bg: #16213e;
+  --card-border: #333;
+  --accent: #4a90d9;
+  --accent-text: #fff;
+  --done-text: #666;
+  --input-border: #444;
+}
+
+/* ===== Base ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+h1 { font-size: 1.8em; }
+h2 { margin-bottom: 12px; font-size: 1.2em; }
+
+/* ===== Greeting ===== */
+#clock { font-size: 2em; font-weight: bold; }
+#date { color: var(--done-text); margin-top: 4px; }
+
+/* ===== Timer ===== */
+#timer-display {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+#timer-controls button,
+#timer-settings button { margin: 4px; }
+#timer-minutes { width: 60px; }
+
+/* ===== Buttons ===== */
+button {
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: opacity 0.2s;
+}
+button:hover { opacity: 0.85; }
+
+/* ===== Inputs ===== */
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.95em;
+}
+
+/* ===== To-Do ===== */
+#todo-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+#todo-input { flex: 1; }
+#todo-list { list-style: none; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: var(--done-text);
+}
+.todo-text { flex: 1; }
+.todo-edit { display: none; }
+.todo-item.editing .todo-text { display: none; }
+.todo-item.editing .todo-edit { display: inline; flex: 1; }
+.todo-del { background: #e05555; }
+
+/* ===== Quick Links ===== */
+#links-input-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+#links-container { display: flex; flex-wrap: wrap; gap: 8px; }
+.link-btn {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.link-btn .link-remove {
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Theme Toggle ===== */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/* ===== Name Section ===== */
+#name-section { display: flex; gap: 8px; margin-top: 4px; }
+#name-input { flex: 1; }
